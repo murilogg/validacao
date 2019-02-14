@@ -23,33 +23,48 @@
 				 			@csrf
 				 			<div class="form-group">
 				 				<label for="nome">Nome do Cliente</label>
-				 				<input type="text" name="nome" id="nome" class="form-control" placeholder="Nome do Cliente">
+				 				<input type="text" name="nome" id="nome" 
+				 				class="form-control {{$errors->has('nome')?'is-invalid':''}}" placeholder="Nome do Cliente">
+@if($errors->has('nome'))
+              <div class="invalid-feedback">
+{{ $errors->first('nome') }}
+              </div>
+@endif
 				 			</div>
 				 			<div class="form-group">
 				 				<label for="idade">Idade do Cliente</label>
-				 				<input type="number" name="idade" id="idade" class="form-control" placeholder="Idade do Cliente">
+				 				<input type="number" name="idade" id="idade" 
+				 				class="form-control {{$errors->has('idade')?'is-invalid':''}}" placeholder="Idade do Cliente">
+@if($errors->has('idade'))
+                <div class="invalid-feedback">
+{{ $errors->first('idade') }}
+                </div>
+@endif
 				 			</div>
 				 			<div class="form-group">
 				 				<label for="endereco">Endereço do Cliente</label>
-				 				<input type="text" name="endereco" id="endereco" class="form-control" placeholder="Endereço do Cliente">
+				 				<input type="text" name="endereco" id="endereco" 
+				 				class="form-control {{$errors->has('endereco')?'is-invalid':''}}" placeholder="Endereço do Cliente">
+@if($errors->has('endereco'))
+				 				<div class="invalid-feedback">
+{{ $errors->first('endereco') }}
+				 				</div>
+@endif				 				
 				 			</div>
 				 			<div class="form-group">
 				 				<label for="email">E-mail do Cliente</label>
-				 				<input type="text" name="email" id="email" class="form-control" placeholder="E-mail do Cliente">
+				 				<input type="text" name="email" id="email" 
+				 				class="form-control {{$errors->has('email')?'is-invalid':''}}" placeholder="E-mail do Cliente">
+@if($errors->has('email'))				 				
+				 				<div class="invalid-feedback">
+{{ $errors->first('email') }}				 					
+				 				</div>
+@endif
 				 			</div>
 				 			<button type="submit" class="btn btn-primary btn-sm">Salvar</button>
 				 			<button type="cancel" class="btn btn-danger btn-sm">Cancelar</button>
 				 		</form>
 				 	</div>
-@if($errors->any())
-                    <div class="card-footer">
-    @foreach($errors->all() as $error)
-                        <div class="alert alert-danger" role="alert">
-                        	{{ $error }}
-                        </div>
-    @endforeach
-                    </div>
-@endif
 				 </div>
 			</div>
 			

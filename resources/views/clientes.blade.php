@@ -41,6 +41,7 @@
 				 				@endforeach
 				 			</tbody>
 				 		</table>
+				 		<a href="/novocliente" class="btn btn-primary btn-sm">Cadastrar Novo Cliente</a>
 				 	</div>
 				</div>
 			</div>
